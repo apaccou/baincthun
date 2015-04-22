@@ -1,0 +1,500 @@
+/*** FONTS ***/
+
+@import url(http://fonts.googleapis.com/css?family=Comfortaa:400,700);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+
+/*** VARIABLES ***/
+@screen-sm-min: 480px;
+@screen-md-min: 768px;
+@screen-lg-min: 960px;
+
+@screen-sm-max: 479px;
+@screen-md-max: 767px;
+@screen-lg-max: 959px;
+
+@text-color: #1a2732;
+@link-color: #ff530d;
+@link-hover-color: #b63500;
+@base-color: #fff;
+
+/*** POINTS DE RUPTURE ***/
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (mobiles, 480px and up) */
+@media (min-width: @screen-sm-min) {  }
+
+/* Medium devices (tablets, 768 and up) */
+@media (min-width: @screen-md-min) {  }
+
+/* Large devices (desktops, 960px and up) */
+@media (min-width: @screen-lg-min) {  }
+
+/*** LAYOUT ***/
+
+/*** GLOBAL ***/
+.page img {
+  max-width: 100%;
+  height:auto;
+}
+/* à tester */
+.nocut {
+  word-wrap: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  hyphens: none;
+}
+
+/*** TYPOGRAPHIE ***/
+body {
+	color: @text-color;
+	background: @base-color url('../images/bg_body.jpg') top center repeat-x;
+  font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+  font-size: 1.14285714rem;
+  line-height: 24px;
+}
+a {
+  color: @link-color;
+}
+a:hover {
+  color: @link-hover-color;
+}
+h1 {
+  font-family: 'Comfortaa', cursive;
+  color: #1a2732;
+  font-size: 60px;
+  font-size: 4.28571429rem;
+  line-height: 68px;
+}
+h2 {
+  font-family: 'Comfortaa', cursive;
+  color: #12af94;
+  font-size: 30px;
+  font-size: 2.14285714rem;
+  line-height: 36px;
+}
+h3 {
+  font-family: 'Comfortaa', cursive;
+  color: #ff530d;
+  font-size: 24px;
+  font-size: 1.71428571rem;
+  line-height: 30px;
+}
+
+/*** HEADER ***/
+#header-wrap {}
+
+.uk-search:before {
+  color: @link-color;
+}
+.uk-search-field,
+.uk-search-field:focus {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 100%;
+}
+@media (min-width: @screen-md-min) {
+  .uk-search-field,
+  .uk-search-field:focus {
+    width: 580px;
+  }
+}
+.uk-search-field:focus {
+  border: @link-hover-color solid 1px;
+}
+
+/* navbar */
+.uk-navbar {
+  background: transparent;
+}
+.uk-navbar-nav>li>a {
+  font-size: 18px;
+}
+.uk-navbar-nav>li>a.uk-active {
+  background-color: transparent;
+  color: @link-color;
+  font-family: 'Comfortaa', cursive;
+}
+nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus {
+  background-color: transparent;
+}
+.uk-navbar-nav>li>a:hover,
+.uk-navbar-nav>li>a.uk-active:hover {
+  color: @link-hover-color;
+}
+
+/* breadcrumb */
+.uk-breadcrumb {
+  font-family: 'Comfortaa', cursive;
+}
+.uk-breadcrumb>li:nth-child(n+2):before {
+  content: ">";
+}
+
+/*** MAIN ***/
+#content-wrap {
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+#content-wrap .content-col-left {word-wrap: break-word;}
+#content-wrap .content-col-left {
+  display: none;
+}
+
+#content-wrap .content-col-main {
+  background: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 30px;
+}
+#content-wrap .content-col-main ul {
+  padding-left:0;
+}
+#content-wrap .content-col-main ul>li {
+  list-style: none;
+}
+#content-wrap .content-col-main ul>li:before {
+  content: ">";
+  display: inline-block;
+  margin: 0 8px;
+  color: @link-color;
+}
+#bloc_baincthun {
+  background: #7cb001;
+  color: #fff;
+  h2, a { color: #fff; }
+  display:block;
+  padding: 25px 25px 10px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topright: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#bloc_baincthun:hover {
+  background: #fff;
+  h2, a {color: #1a2732;text-decoration:none;}
+  .nav li:hover {background-color: #1a2732;padding-left:8px;}
+  .nav li:hover a {color: #fff;}
+}
+#bloc_mairie {
+  background: #d3222a;
+  color: #fff;
+  h2, a { color: #fff; }
+  display:block;
+  padding: 25px 25px 10px;
+}
+#bloc_mairie:hover {
+  background: #fff;
+  h2 {color: #1a2732;text-decoration:none;}
+}
+#bloc_jeunesse {
+  background: #ff530d;
+  color: #fff;
+  h2, a { color: #fff; }
+  display:block;
+  padding: 25px 25px 10px;
+}
+#bloc_jeunesse:hover {
+  background: #fff;
+  h2 {color: #1a2732;text-decoration:none;}
+}
+#bloc_tourisme {
+  background: #4eccc3;
+  color: #fff;
+  h2, a { color: #fff; }
+  display:block;
+  padding: 25px 15px 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+#bloc_tourisme:hover {
+  background: #fff;
+  h2 {color: #1a2732;text-decoration:none;}
+}
+.content-col-right .nav {
+  padding: 0;
+  list-style: none;
+}
+.uk-icon-twitter {
+  background-color: #0dbeff;
+  color: #fff;
+}
+.uk-icon-facebook {
+  background-color: #0051ad;
+  color: #fff;
+}
+.uk-icon-google {
+  background-color: #ff0d0d;
+  color: #fff;
+}
+
+/*** FOOTER ***/
+#footer-wrap {position: relative;}
+#back-to-top {
+    position: absolute;
+    right: 40px;
+    bottom: 100px;
+}
+#footer-top {
+  background-color: #4aa4e0;
+  color: #fff;
+  padding: 15px 0;
+}
+#footer-top h3,
+#footer-top a {
+  color: #fff;
+}
+@media (max-width: @screen-md-max) {
+  #footer-top h3 { margin-top: 15px; }
+}
+#footer-top .contact {
+  background: url('../images/ico-contact.png') no-repeat left center;
+  padding-left: 30px;
+  min-height: 32px;
+}
+#footer-top .horaire {
+  background: url('../images/ico-horaire.png') no-repeat left center;
+  padding-left: 30px;
+  min-height: 32px;
+}
+#footer-top .info {
+  background: url('../images/ico-info.png') no-repeat left center;
+  padding-left: 30px;
+  min-height: 32px;
+}
+#footer-top .plan {
+  background: url('../images/ico-plan.png') no-repeat left center;
+  padding-left: 30px;
+  min-height: 32px;
+}
+#footer-bottom {
+  background-color: #4aa4e0;
+  color: #fff;
+  padding: 15px 0;
+}
+#footer-bottom a {
+  color: #fff;
+}
+#footer-bottom .copyright a img {
+  vertical-align: baseline;
+}
+
+/*** MODULES ET BLOCS ***/
+
+/*** FORMULAIRES ***/
+
+/*** SPECIFIQUE A CERTAINES PAGES ***/
+/* HOME */
+@media(min-width:@screen-lg-min) {
+  #bloc_home_menu {
+    height: 271px;
+    overflow: visible;
+  }
+}
+#bloc_home_actu {
+  background: #4aa4e0;
+  color: #fff;
+  padding-top:40px;
+  padding-bottom:20px;
+  h2, h3, a {color:#fff;}
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  z-index:0;
+}
+#bloc_home_actu .uk-panel {
+  padding: 15px
+}
+#bloc_home_actu .uk-icon-button:hover {
+  color:#1a2732;
+}
+#bloc_home_actu .uk-button {
+  background: #ff530d;
+  color: #fff;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+}
+#bloc_home_actu .uk-button:hover {
+  background: #fff;
+  color: #1a2732;
+}
+.lirelasuite {
+  background: #ff530d;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+}
+#voirtoutelactu {
+  margin-right:20px;
+  padding-right: 32px;
+  background: transparent url('../images/ico-suite.png') no-repeat right 2px;
+}
+#bloc_home_calendrier h2 {
+  color: #1a2732;
+}
+#bloc_home_calendrier .uk-button {
+  background: #ff530d;
+  color: #fff;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+}
+#bloc_home_calendrier .uk-button:hover {
+  background: #fff;
+  color: #1a2732;
+}
+@media (max-width: @screen-md-max) {
+  #bloc_home_calendrier .uk-panel { margin-bottom: 15px; }
+}
+
+#bloc_home_archive {
+  background: #ff530d;
+  padding: 15px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  h2, h3, a {color:#fff;}
+  ul {list-style: none;padding-left:0;}
+}
+@media (max-width: @screen-md-max) {
+  #bloc_home_archive { margin-top: 15px; }
+}
+
+#bloc_home_baincthun {
+  background: transparent url('../images/bg_baincthun.png') no-repeat center top;
+  height:271px;
+  width: 271px;
+  max-width: 100%;
+  display: block;
+  z-index: 100;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  position: relative;
+  .nav {
+    display:none;
+    list-style: none;
+    padding-left:20px;
+    padding-bottom: 20px;
+    li {margin-bottom:6px;}
+  }
+  h2, a {color: #fff;}
+  h2 {padding:0 20px;position:absolute;bottom:0;}
+}
+#bloc_home_baincthun:hover {
+  background: #7cb001;
+  height:auto;
+  min-height: 271px;
+  .nav {
+    display: block;
+  }
+  h2 {position: relative;padding-top:20px;}
+}
+#bloc_home_mairie {
+  background: transparent url('../images/bg_mairie.png') no-repeat center top;
+  height:271px;
+  width: 271px;
+  max-width: 100%;
+  display: block;
+  z-index: 100;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  position: relative;
+  .nav {
+    display:none;
+    list-style: none;
+    padding-left:20px;
+    padding-bottom: 20px;
+    li {margin-bottom:6px;}
+  }
+  .nav li {margin-bottom:5px;}
+  h2, a {color: #fff;}
+  h2 {padding:0 20px;position:absolute;bottom:0;}
+}
+#bloc_home_mairie:hover {
+  background: #d3222a;
+  height:auto;
+  min-height: 271px;
+  .nav {
+    display: block;
+  }
+  h2 {position: relative;padding-top:20px;}
+}
+#bloc_home_jeunesse {
+  background: transparent url('../images/bg_jeunesse.png') no-repeat center top;
+  height:271px;
+  width: 271px;
+  max-width: 100%;
+  display: block;
+  z-index: 100;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  position: relative;
+  .nav {
+    display:none;
+    list-style: none;
+    padding-left:20px;
+    padding-bottom: 20px;
+    li {margin-bottom:6px;}
+  }
+  .nav li {margin-bottom:5px;}
+  h2, a {color: #fff;}
+  h2 {padding:0 20px;position:absolute;bottom:0;}
+}
+#bloc_home_jeunesse:hover {
+  background: #ff530d;
+  height:auto;
+  min-height: 271px;
+  .nav {
+    display: block;
+  }
+  h2 {position: relative;padding-top:20px;}
+}
+#bloc_home_tourisme {
+  background: transparent url('../images/bg_tourisme.png') no-repeat center top;
+  height:271px;
+  width: 271px;
+  max-width: 100%;
+  display: block;
+  z-index: 100;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  border-radius: 13px;
+  position: relative;
+  .nav {
+    display:none;
+    list-style: none;
+    padding-left:20px;
+    padding-bottom: 20px;
+    li {margin-bottom:6px;}
+  }
+  .nav li {margin-bottom:5px;}
+  h2, a {color: #fff;}
+  h2 {padding:0 20px;position:absolute;bottom:0;}
+}
+#bloc_home_tourisme:hover {
+  background: #4eccc3;
+  height:auto;
+  min-height: 271px;
+  .nav {
+    display: block;
+  }
+  h2 {position: relative;padding-top:20px;}
+}
