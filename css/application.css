@@ -374,6 +374,9 @@ nav>li.uk-open>a, .uk-navbar-nav>li:hover>a, .uk-navbar-nav>li>a:focus {
 @media (max-width: @screen-md-max) {
   #bloc_home_archive { margin-top: 15px; }
 }
+#bloc_home_archive .ccmDateNav {
+  color: #fff;
+}
 
 #bloc_home_baincthun {
   background: transparent url('../images/bg_baincthun.png') no-repeat center top;

@@ -79,6 +79,26 @@
             <a href="#" class="uk-icon-button uk-icon-google" rel="me" title="Suivez-nous sur Google+"></a>
           </div>
         </div>
+        <?php
+        Loader::model('page_list');
+        $pl = new PageList();
+        $nh = Loader::helper('navigation');
+        $pl->filterByCollectionTypeHandle('actualite');
+        $pl->sortByDisplayOrder();
+        $pages = $pl->get(3,0);
+
+        foreach($pages as $page) {
+          $url = $nh->getCollectionURL($page);
+          echo '<div class="uk-width-medium-1-4">';
+            echo '<div class="uk-panel">';
+              echo '<h3>'. $page->getCollectionName() .'</h3>';
+              echo '<p>'. $page->getCollectionDescription() .'</p>';
+              echo '<a href="'. $url .'" class="uk-button">Lire la suite</a>';
+            echo '</div>';
+          echo '</div>';
+        }
+        ?>
+        <!--
         <div class="uk-width-medium-1-4">
           <div class="uk-panel">
             <h3>Règles d'urbanisme</h3>
@@ -98,7 +118,9 @@
             <a class="uk-button" href="#">Lire la suite</a>
           </div>
         </div>
+        -->
       </div>
+
       <div class="uk-grid">
         <div class="uk-width-1-1 uk-clearfix">
           <h3><a id="voirtoutelactu" href="<?php echo $this->url('/actus'); ?>" class="uk-align-right">VOIR TOUTE L'ACTU</a></h3>
@@ -118,39 +140,55 @@
         </div>
         <div class="uk-width-medium-1-4">
           <div class="uk-panel">
-            <article class="uk-article">
-              <h3 class="article-title">Récital de Noël de Patrick Damie</h3>
-              <p class="article-meta">28/11/2014 : 20:30</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, est! Esse voluptatum aperiam dolorem odit quasi, cupiditate commodi error natus ea! Officiis, amet!
-              </p>
-              <a href="#" class="uk-button">Lire la suite</a>
-            </article>
+            <?php
+            Loader::model('page_list');
+            $pl = new PageList();
+            $nh = Loader::helper('navigation');
+            $pl->filterByCollectionTypeHandle('calendrier');
+            $pl->sortByDisplayOrder();
+            $pages = $pl->get(1,0);
+
+            foreach($pages as $page) {
+              $url = $nh->getCollectionURL($page);
+              echo '<article>';
+                echo '<h3 class="article-title">'. $page->getCollectionName() .'</h3>';
+                echo '<p class="article-meta">'. $page->getCollectionDatePublic('d/m/Y') .'</p>';
+                echo '<p>'. $page->getCollectionDescription() .'</p>';
+                echo '<a href="'. $url .'" class="uk-button">Lire la suite</a>';
+              echo '</article>';
+            }
+            ?>
           </div>
         </div>
         <div class="uk-width-medium-1-4">
           <div class="uk-panel">
-            <article class="uk-article">
-              <h3 class="article-title">Marché de Noël</h3>
-              <p class="article-meta">28/11/2014 : 20:30</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam culpa possimus, tempora, veritatis aut ab, quos mollitia consequatur quia laborum beatae veniam cumque?
-              </p>
-              <a href="#" class="uk-button">Lire la suite</a>
-            </article>
+            <?php
+            Loader::model('page_list');
+            $pl = new PageList();
+            $nh = Loader::helper('navigation');
+            $pl->filterByCollectionTypeHandle('calendrier');
+            $pl->sortByDisplayOrder();
+            $pages = $pl->get(1,1);
+
+            foreach($pages as $page) {
+              $url = $nh->getCollectionURL($page);
+              echo '<article>';
+                echo '<h3 class="article-title">'. $page->getCollectionName() .'</h3>';
+                echo '<p class="article-meta">'. $page->getCollectionDatePublic('d/m/Y') .'</p>';
+                echo '<p>'. $page->getCollectionDescription() .'</p>';
+                echo '<a href="'. $url .'" class="uk-button">Lire la suite</a>';
+              echo '</article>';
+            }
+            ?>
           </div>
         </div>
         <div class="uk-width-medium-1-4">
           <div id="bloc_home_archive" class="uk-panel">
             <h2>Archives</h2>
-            <ul>
-              <li><a>Lorem ipsum dolor sit amet.</a></li>
-              <li><a>Tempore, maxime dolorum culpa deserunt.</a></li>
-              <li><a>Quibusdam minima nobis error nihil!</a></li>
-              <li><a>Magni cum, consequuntur. Nisi, quaerat.</a></li>
-              <li><a>Quod dolorem corporis illo quibusdam.</a></li>
-              <li><a>Doloribus officia perferendis, officiis temporibus?</a></li>
-            </ul>
+            <?php
+            $a = new Area('Archives');
+            $a->display($c);
+            ?>
           </div>
         </div>
       </div>
