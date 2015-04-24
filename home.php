@@ -83,7 +83,8 @@
         Loader::model('page_list');
         $pl = new PageList();
         $nh = Loader::helper('navigation');
-        $pl->filterByCollectionTypeHandle('actualite');
+        $pl->filterByCollectionTypeHandle('page');
+        $pl->filterByParentID(204);
         $pl->sortByDisplayOrder();
         $pages = $pl->get(3,0);
 
@@ -144,7 +145,8 @@
             Loader::model('page_list');
             $pl = new PageList();
             $nh = Loader::helper('navigation');
-            $pl->filterByCollectionTypeHandle('calendrier');
+            $pl->filterByCollectionTypeHandle('page');
+            $pl->filterByParentID(205);
             $pl->sortByDisplayOrder();
             $pages = $pl->get(1,0);
 
@@ -166,7 +168,8 @@
             Loader::model('page_list');
             $pl = new PageList();
             $nh = Loader::helper('navigation');
-            $pl->filterByCollectionTypeHandle('calendrier');
+            $pl->filterByCollectionTypeHandle('page');
+            $pl->filterByParentID(205);
             $pl->sortByDisplayOrder();
             $pages = $pl->get(1,1);
 
